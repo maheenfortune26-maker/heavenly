@@ -21,14 +21,9 @@ app.use('/api/bookings', bookingRouter)
 
 app.get('/', (req, res) => res.json({ message: 'Heavenly API Running ✅' }))
 
-// DB + Server
-const PORT = process.env.PORT || 5000
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/Heavenly')
-  .then(() => {
-    console.log('✅ MongoDB connected')
-    app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`))
-  })
-  .catch(err => {
-    console.error('DB connection failed:', err.message)
-    app.listen(PORT, () => console.log(`🚀 Server running (no DB) on port ${PORT}`))
-  })
+// DB Connection
+mongoose.connect(process.env.MONGODB_URI)
+  .then(() => console.log('✅ MongoDB connected'))
+  .catch(err => console.error('DB connection failed:', err.message))
+
+export default app
