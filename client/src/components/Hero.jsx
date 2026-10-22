@@ -16,7 +16,7 @@ export default function Hero() {
   }
 
   return (
-    <div className="relative min-h-[92vh] flex flex-col items-center justify-center text-white overflow-hidden">
+    <div className="relative min-h-[92vh] flex flex-col items-center justify-center text-white overflow-hidden pt-28 md:pt-36 pb-12">
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
@@ -26,9 +26,6 @@ export default function Hero() {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-1.5 rounded-full mb-5 border border-white/30">
-          🌟 Discover Your Perfect Stay
-        </span>
         <h1 className="text-5xl md:text-7xl font-extrabold mb-4 leading-tight tracking-tight">
           Find Your <span className="text-indigo-400">Dream</span><br />Hotel Today
         </h1>
