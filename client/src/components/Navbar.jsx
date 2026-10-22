@@ -58,7 +58,15 @@ export default function Navbar() {
             My Bookings
           </Link>
           {user && (
-            <img src={user.image} alt={user.username} className="w-9 h-9 rounded-full ring-2 ring-indigo-300 object-cover" />
+            <img
+              src={user.image || assets.userIcon}
+              alt={user.username || 'User'}
+              onError={(e) => {
+                e.target.onerror = null
+                e.target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(user.username || 'User')}&background=6366f1&color=fff`
+              }}
+              className="w-9 h-9 rounded-full ring-2 ring-indigo-300 object-cover"
+            />
           )}
         </div>
 
