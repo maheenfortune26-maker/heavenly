@@ -1,0 +1,14 @@
+{
+ "name": "heavenly-client",
+  "version": "1.0.0",
+  "scripts": {
+    "install-all": "cd client && npm install && cd ../server && npm install",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run dev:client\" \"npm run dev:server\"",
+    "build": "cd client && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
